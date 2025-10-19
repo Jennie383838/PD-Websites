@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | XT Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: white;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #14b8a6;
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #0f766e;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #0f766e;
+      margin: 2rem 0 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #374151;
+      margin: 1rem 0 2rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .skill {
+      background-color: #ccfbf1;
+      color: #0f766e;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      margin: 0.5rem;
+      background-color: #14b8a6;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0f766e;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(20,184,166,0.3);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0f766e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Projects</h1>
+    <p>This is where you can showcase your projects. Add links, screenshots, or brief descriptions of your work.</p>
+
+    <div class="skills">
+      <span class="skill">Web App</span>
+      <span class="skill">Portfolio Design</span>
+      <span class="skill">Interactive UI</span>
+      <span class="skill">API Integration</span>
+    </div>
+
+    <div>
+      <a class="btn" href="resume.html"> ← Previous Page </a>
+      <a class="btn" href="index.html">Next Page →</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 XT Portfolio | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | XT Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: white;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #14b8a6;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #0f766e;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #0f766e;
+      margin: 2rem 0 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #374151;
+      margin: 1rem 0 2rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .skill {
+      background-color: #ccfbf1;
+      color: #0f766e;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0.5rem;
+      background-color: #14b8a6;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0f766e;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(20,184,166,0.3);
+    }
+
+    footer {
+      background-color: #0f766e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    #resumeUpload {
+      display: none;
+    }
+
+    #fileInfo {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #0f766e;
+    }
+
+    #downloadLink {
+      display: none;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html" class="active">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Resume</h1>
+    <p>This is where you can showcase your professional experience, education, and key skills.</p>
+
+    <div class="skills">
+      <span class="skill">Front-End Development</span>
+      <span class="skill">Back-End Development</span>
+      <span class="skill">UI/UX Design</span>
+      <span class="skill">Git & Version Control</span>
+    </div>
+
+    <!-- Select Resume Button -->
+    <form>
+      <label for="resumeUpload" class="btn">Select Resume ⬆️</label>
+      <input type="file" id="resumeUpload" name="resume" accept=".pdf,.doc,.docx">
+    </form>
+
+    <!-- Display Selected File and Download Link -->
+    <div id="fileInfo"></div>
+    <a id="downloadLink" class="btn" href="#" download>Download Selected File ⬇️</a>
+
+    <!-- Previous/Next Buttons -->
+    <div>
+      <a class="btn" href="about.html"> ← Previous Page </a>
+      <a class="btn" href="projects.html">Next Page →</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 XT Portfolio | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const fileInput = document.getElementById('resumeUpload');
+    const fileInfo = document.getElementById('fileInfo');
+    const downloadLink = document.getElementById('downloadLink');
+
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if(file) {
+        fileInfo.textContent = "Selected File: " + file.name;
+
+        // Create a temporary URL for download
+        const fileURL = URL.createObjectURL(file);
+        downloadLink.href = fileURL;
+        downloadLink.style.display = "inline-block";
+        downloadLink.download = file.name;
+      } else {
+        fileInfo.textContent = "";
+        downloadLink.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
